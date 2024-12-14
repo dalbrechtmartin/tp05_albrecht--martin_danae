@@ -34,5 +34,5 @@
   }
 
   .item-sidebar {
-    @apply hover:text-darkPink
+    @apply hover:text-darkPink;
   }

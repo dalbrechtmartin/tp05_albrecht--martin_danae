@@ -60,7 +60,7 @@
     }
 
     .container {
-        @apply max-w-3xl mx-auto flex justify-center
+        @apply max-w-3xl mx-auto flex justify-center;
     }
     
 }

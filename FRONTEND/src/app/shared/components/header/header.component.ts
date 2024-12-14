@@ -1,23 +1,29 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Store, Select } from '@ngxs/store';
+import { CartState } from '../../../features/cart/states/cart.state';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   title = 'TP05 – Module Angular - Routage / Pattern Redux';
-
-  // toggleSidebar() {
-  //   const sidebar = document.querySelector('app-sidebar');
-  //   if (sidebar) {
-  //     sidebar.classList.toggle('open');
-  //   }
-  // }
-
+  
   @Output() toggleSidebar = new EventEmitter<void>();
+
+  cartCount: number = 0;
+
+  constructor(private store: Store) {}
 
   onToggleSidebar() {
     this.toggleSidebar.emit();
+  }
+
+  ngOnInit() {
+    this.store.select(CartState.getCartCount).subscribe(count => {
+      this.cartCount = count;
+      console.log('Cart count:', this.cartCount);
+    });
   }
 }

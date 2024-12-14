@@ -14,9 +14,6 @@ app-sidebar {
     background: none;
     border: none;
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    left: 10px;
 }
 
 .sidebar-toggle-btn svg {
