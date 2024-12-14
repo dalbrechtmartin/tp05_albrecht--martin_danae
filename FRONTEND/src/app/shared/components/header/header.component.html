@@ -1,0 +1,15 @@
+<header class="py-3 flex items-center bg-white">
+    <div class="ms-6">
+        <button (click)="onToggleSidebar()" class="sidebar-toggle-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+    <div class="container flex justify-between items-center">
+        <a class="text-main font-playpen-sans flex items-center" href="home">
+            <span class="ml-1 text-xl">{{ title }}</span>
+        </a>
+    </div>
+</header>
